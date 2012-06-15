@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+      <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body><h1>Welcome to My Store</h1>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "alert alert-#{key}") %>
+      <% end %>
+      <div>
+        <%= render 'layouts/sidebar' %>
+     
+      <div class="content">
+      <%= yield %>
+      </aside>
+      </div>
+      </div>
+	  
+    </div>
+  </body>
+<br />
+<%= render 'layouts/footer' %>
+</html>

@@ -1,0 +1,19 @@
+<h1>Show Category</h1>
+
+<% if @category.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @category.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+<% end %>
+<h2>category name</h2>
+<h3><%= @category.name %></h3>
+<h2>parent category</h2>
+<h3><%= @category.name %></h3>
+
+
+
+
+

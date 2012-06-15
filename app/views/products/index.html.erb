@@ -1,0 +1,40 @@
+<h1>Listing Product</h1>
+<%= flash[:notice] %>
+<%= link_to "new product", new_product_path %><br/>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+<% if current_user.nil? %>
+<% @product.each do |f| %>
+  <tr>
+    <td><%= f.name%></td>
+    <td><%= f.price %></td>
+    <td><%= link_to "Edit", {:action => "edit", :id => f.id} %></td>
+    <td><%= link_to "Delete", {:action => "delete", :id => f.id}, :confirm => "Are you sure you want to delete  this article?" %></td>
+    <td><%= link_to "see more", {:action => "show", :id => f.id} %></td>
+ </tr>
+  <% end %>
+<% else %>
+  <% @product.each do |f| %>
+  <tr>
+    <td><%= f.name%></td>
+    <td><%= f.price %></td>
+    <% if current_user.id == f.user_id %>
+    <td><%= link_to "Edit", {:action => "edit", :id => f.id} %></td>
+    <td><%= link_to "Delete", {:action => "delete", :id => f.id}, :confirm => "Are you sure you want to delete  this article?" %></td>
+    <td><%= link_to "see more", {:action => "show", :id => f.id} %></td>
+    <% else %>
+     <td><%= link_to "Edit", {:action => "edit", :id => f.id}, { :hidden => true } %></td>
+    <td><%= link_to "Delete", {:action => "delete", :id => f.id}, { :hidden => true }, :confirm => "Are you sure you want to delete  this article?" %></td>
+     <td><%= link_to "see more", {:action => "show", :id => f.id} %></td>
+    <% end %>
+  </tr>
+<% end %>
+<% end %>
+</table>
+<br />
+
+

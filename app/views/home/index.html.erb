@@ -1,0 +1,30 @@
+<h1>Latest Product</h1>
+<%= flash[:notice] %>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Price</th>
+  </tr>
+  <% @product.each do |f| %>
+  <tr>
+    <td><%= f.name%></td>
+    <td><%= f.price %></td>
+    <td><%= link_to "see more", product_path(f.id)%></td>
+  </tr>
+<% end %>
+</table>
+<br />
+<h1>Latest Article</h1>
+<table>
+  <tr>
+    <th>Content</th>
+  </tr>
+  <% @article.each do |f| %>
+  <tr>
+    <td><%= truncate(strip_tags(f.body), length: 20) %></td>
+    <td><%= link_to "see details", article_path(f.id) %></td>
+  </tr>
+<% end %>
+</table>
+
+      

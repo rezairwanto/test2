@@ -1,0 +1,25 @@
+<h1>edit Profile</h1>
+ 
+<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @user.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+<% end %>
+<%= f.label :email %>
+<%= f.text_field :email %><br />
+<%= f.label :name %>
+<%= f.text_field :name %><br />
+<%= f.label :address %>
+<%= f.text_field :address %><br />
+<%= f.label :phonenumber %>
+<%= f.text_field :phone_number %><br />
+<%= f.label :date %>
+<%= date_select "user", "birthday", :start_year => 1910%><br />
+<%= f.label :Gender %>
+<%= f.select :gender, [['male', true], ['female', false]] %><br />
+<%= f.submit "update" %>
+<% end %>

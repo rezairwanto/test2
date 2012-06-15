@@ -1,0 +1,7 @@
+
+  <% @comments.each do |comment| %>
+    <% if comment.article_id == @article.id %>
+    <%= comment.comment %><br />
+    <% end %>
+   <% end %>
+

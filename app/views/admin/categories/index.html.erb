@@ -1,0 +1,22 @@
+<h1>Listing Category</h1>
+<%= flash[:notice] %>
+<%= link_to "new category", new_admin_category_path, :controller=>"admin/categories" %><br/>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Parent Category</th>
+  </tr>
+  <% @category.each do |f| %>
+  <tr>
+    <td><%= f.name%></td>
+    <td><%= f.parent_id %></td>
+    <td><%= link_to "Edit", {:action => "edit", :id => f.id} %></td>
+    <td><%= link_to "Delete", {:action => "delete", :id => f.id}, :confirm => "Are you sure you want to delete  this article?" %></td>
+    <td><%= link_to "show", {:action => "show", :id => f.id} %></td>
+  </tr>
+
+<% end %>
+</table>
+<br />
+
+

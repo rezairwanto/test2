@@ -1,0 +1,25 @@
+<h1>Listing Category</h1>
+<%= flash[:notice] %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Parent Category</th>
+  </tr>
+  <% @category.each do |f| %>
+  <tr>
+    <% @parent_name = Category.find_by_id(f.parent_id) %>
+    <td><%= f.name%></td>
+    <% if @parent_name != nil %>
+    <td><%= @parent_name.name%></td>
+    <% else %>
+    <td></td>
+    <% end %>
+    <td><%= link_to "show", {:action => "show", :id => f.id} %></td>
+  </tr>
+
+<% end %>
+</table>
+<br />
+
+

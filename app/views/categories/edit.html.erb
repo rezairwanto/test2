@@ -1,0 +1,17 @@
+<h1>Edit Category</h1>
+ 
+<%= form_for @category do |f| %>
+<% if @category.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @category.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+<% end %>
+<%= f.label :name %> <br />
+<%= f.text_field :name %> <br />
+<%= f.label :parentcategory %><br /> 
+<%= f.select :parent_id, @parent_category, { :include_blank => true }%>
+<%= f.submit "update" %>
+<% end %>

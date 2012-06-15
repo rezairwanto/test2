@@ -1,0 +1,3 @@
+$("#comments").html(" <%= j( render :partial => "articles/comments",
+                             :locals => {:comments => @comments} ) %>")
+$("#comment_content").val("");

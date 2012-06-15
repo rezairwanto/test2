@@ -1,0 +1,159 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+.container{
+  width: 1000px;
+  margin: 0 auto;
+  height: auto;
+}
+body{
+  color: white;
+}
+h1{
+  font: 40px/54px HighlandGothicLightFLFRegular, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  color: #970000;
+  text-shadow: -1px -1px 0 #650000, 0 0 10px rgba(255,255,255,0.7);
+  text-align: center;  
+}
+html {
+  background: -moz-linear-gradient(top, #4C7D7E 0%, #800517 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#4C7D7E), to(#800517))
+}
+#menu{
+
+}
+#menu ul{
+  float: left;
+  list-style-type: none;
+  padding: 15px auto;
+  margin-bottom: 5px;
+  margin-top: 15px;
+  width:1000px;
+  list-style-type: none;
+  color : white;
+}
+
+#menu li{
+  float: left;
+  margin-left: 110px;
+
+  list-style-type: none;
+  color : white;
+}
+
+#menu ul li {
+  list-style-type: none;
+  color : white;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: black;
+
+}
+
+a:link{
+  color: white;
+}
+
+a:focus{
+  color: black;
+
+}
+.clear{
+  clear: both;
+}
+#sidebarcss{
+  float: left; 
+}
+
+#sidebarcss h3{
+  display: block; 
+  font-size: 90%; 
+  padding: 3px 0 5px 3px;
+  border: 1px solid #000000;
+  color: #333333;
+  margin: 10px auto;
+  width:159px;
+  text-align: center;
+}
+
+#sidebarcss ul li{
+ float: left;
+ list-style: none;
+ display:block;
+ padding: 10px 22px 20px 10px;
+ color: #ffffff;  
+}
+.vertmenu {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  width: 160px;
+  padding: 0;
+}
+
+.vertmenu h3 {
+  display: block; 
+
+  font-size: 90%; 
+  padding: 3px 0 5px 3px;
+  border: 1px solid #000000;
+  color: #333333;
+  margin: 10px 10px 10px 10px;
+  width:159px;
+  text-align: center;
+  border-radius:30px;
+  -moz-border-radius:30px;
+  -moz-box-shadow: 10px 10px 5px #888888; 
+  box-shadow: 10px 10px 5px #888888;
+}
+
+.vertmenu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+
+}
+.vertmenu ul li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vertmenu ul li a {
+  font-size: 80%;
+  display: block;
+  border-bottom: 1px dashed #C39C4E;
+  padding: 5px 0 2px 4px;
+  text-decoration: none;
+  color: #ffffff;
+  width:140px;
+}
+.content {
+ width: 1000px;
+  margin-left: 180px;
+  height: auto;
+  text-align: left;
+}
+.content h1 {
+  width: 1000px;
+  margin-left: -200px;
+  text-align: left;
+}
+
+.footer{
+ text-align: center;
+ margin: 10px 0 30px;
+ clear: both;
+ color: white;
+}
+
+

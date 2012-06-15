@@ -1,0 +1,14 @@
+<aside id="sidebarcss">
+  <section class="vertmenu">
+  <% if current_user.nil? %>
+  <%= render 'layouts/login' %>
+  <% else %>
+  <ul>
+    <li><%= link_to "edit profile", edit_user_path(current_user)%> </li>
+    <li><%= link_to "sell a product", new_product_path%> </li>
+    <li><%= link_to "share an article", new_article_path%> </li>
+    <li><%= link_to "log out", log_out_path %></li>
+  </ul>
+  <% end %>
+  </section>
+

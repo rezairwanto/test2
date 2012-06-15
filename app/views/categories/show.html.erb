@@ -1,0 +1,22 @@
+<h1>Show Category</h1>
+
+<% if @category.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @category.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+<% end %>
+<h4>category name</h4>
+<h4><%= @category.name %></h4>
+<h4>parent category</h4>
+<% if @categoryy != nil %>
+<h4><%= @categoryy.name %></h4>
+<% else %>
+<h4></h4>
+<% end %>
+
+
+
+

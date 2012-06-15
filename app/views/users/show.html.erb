@@ -1,0 +1,30 @@
+<h1>User Profile</h1>
+ 
+<%= form_for @user do |f| %>
+<% if @user.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @user.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+<% end %>
+<%= f.label :email %>
+<%= @user.email %><br />
+<%= f.label :name %>
+<%= @user.name %><br />
+<%= f.label :address %>
+<%= @user.address %><br />
+<%= f.label :phonenumber %>
+<%= @user.phone_number %><br />
+<%= f.label :birthday %>
+<%= @user.birthday %><br />
+<%= f.label :Gender %>
+<% if @user.gender == true %>
+<%= 'male' %>
+<% else %>
+<%= 'female' %>
+<% end %>
+<% end %>
+
+<%= link_to "edit", edit_user_path %>

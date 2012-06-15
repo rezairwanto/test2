@@ -1,0 +1,26 @@
+<h1>Sign Up</h1>
+  <%= form_for @user do |f| %>
+    <% if @user.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @user.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+       </div>
+   <% end %>
+   <p>
+     <%= f.label :email %></br>
+     <%= f.text_field :email %>
+   </p>
+   <p> 
+    <%= f.label :password %><br /> 
+    <%= f.password_field :password %> 
+  </p>
+   <p>
+     <%= f.label :password_confirmation %>
+     <%= f.password_field :password_confirmation %>
+   </p>
+   <%= recaptcha_tags %>
+   <p class="button"><%= f.submit "create" %></p>
+<% end %>

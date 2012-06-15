@@ -1,0 +1,24 @@
+<h1>show Product</h1>
+ 
+<%= form_for @product do |f| %>
+<% if @product.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @product.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+<% end %>
+<%= f.label :name %>
+<%= @product.name %><br />
+<%= f.label :description %>
+<%= @product.description %><br />
+<%= f.label :price %>
+<%= @product.price %><br />
+<%= f.label :weight %>
+<%= @product.weight %><br />
+<%= f.label :category %>
+<%= @product.categories_id %><br />
+<% end %>
+
+<%= link_to "edit", edit_product_path %>

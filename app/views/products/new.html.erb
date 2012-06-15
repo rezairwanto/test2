@@ -1,0 +1,36 @@
+<h1>New Product</h1>
+  <%= link_to " log out", log_out_path %>
+  <%= form_for @product do |f| %>
+    <% if @product.errors.any? %>
+       <div class="error_message">
+       <ul>
+          <% for message in @product.errors.full_messages %>
+          <%= message %>
+          <% end %>
+       </ul>
+       </div>
+   <% end %>
+   <p>
+     <%= f.label :name %></br>
+     <%= f.text_field :name %>
+   </p>
+   <p>
+     <%= f.label :description %></br>
+     <%= f.text_area :description %>
+   </p>
+   <p>
+     <%= f.label :price %></br>
+     <%= f.text_field :price %>
+   </p>
+   <p>
+     <%= f.label :weight %></br>
+     <%= f.text_field :weight %>
+   </p>
+   <p> 
+    <%= f.label :category %><br /> 
+    <%= f.select :categories_id, @parent_category, { :include_blank => true } %>
+  </p>
+   <br />
+   <p class="button"><%= f.submit "create" %></p>
+   <%= link_to "back", products_path  %>
+<% end %>
